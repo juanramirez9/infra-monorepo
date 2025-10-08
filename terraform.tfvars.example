@@ -1,0 +1,12 @@
+aws_region    = "us-west-2"
+environment   = "dev"
+project_name  = "my-project"
+
+# S3 Configuration
+s3_bucket_name           = "my-project-dev-bucket"
+enable_s3_versioning     = true
+enable_s3_encryption     = true
+
+# Secrets Manager Configuration
+secrets_manager_secret_name = "my-project-dev-secret"
+secret_description          = "Development environment secret"

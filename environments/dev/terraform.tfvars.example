@@ -1,0 +1,7 @@
+aws_region    = "us-west-2"
+environment   = "dev"
+project_name  = "my-project"
+
+# S3 Configuration
+enable_s3_versioning  = true
+enable_s3_encryption  = true
