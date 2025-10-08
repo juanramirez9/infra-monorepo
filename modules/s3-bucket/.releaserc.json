@@ -1,6 +1,6 @@
 {
   "extends": "semantic-release-monorepo",
-  "tagFormat": "bucket/v${version}",
+  "tagFormat": "s3-bucket/v${version}",
   "branches": [
     "main",
     "master"
@@ -50,28 +50,22 @@
       }
     ],
     [
-      "@semantic-release/npm",
-      {
-        "npmPublish": false
-      }
-    ],
-    [
       "@semantic-release/github",
       {
         "assets": [
           {
             "path": "CHANGELOG.md",
-            "label": "Changelog"
+            "label": "S3 Bucket Module Changelog"
           }
         ],
-        "releasedLabels": ["released"]
+        "releasedLabels": ["released", "s3-bucket"]
       }
     ],
     [
       "@semantic-release/git",
       {
-        "assets": ["CHANGELOG.md", "package.json", "package-lock.json"],
-        "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+        "assets": ["CHANGELOG.md"],
+        "message": "chore(s3-bucket): release ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
       }
     ]
   ]

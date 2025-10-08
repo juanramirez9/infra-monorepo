@@ -49,4 +49,4 @@ jobs:
         working-directory: ${{ matrix.folder }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx semantic-release -e semantic-release-monorepo
+        run: npx semantic-release
