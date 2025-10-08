@@ -37,7 +37,6 @@ jobs:
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
-        working-directory: ${{ matrix.folder }}
         with:
           node-version: '20'
           cache: 'npm'
