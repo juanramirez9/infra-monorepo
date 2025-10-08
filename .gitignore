@@ -37,9 +37,9 @@ yarn-error.log*
 .npm
 .yarn-integrity
 
-# Package locks (optional, remove if you want to commit them)
-package-lock.json
-yarn.lock
+# # Package locks (optional, remove if you want to commit them)
+# package-lock.json
+# yarn.lock
 
 # Ignore Mac .DS_Store files
 .DS_Store
