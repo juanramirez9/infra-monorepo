@@ -42,11 +42,11 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Semantic Release ${{ matrix.folder }}
         id: semantic
         working-directory: ${{ matrix.folder }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx semantic-release
+        run: npx semantic-release -e semantic-release-monorepo
