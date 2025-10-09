@@ -1,0 +1,48 @@
+{
+  "name": "secrets-manager",
+  "version": "0.0.0-development",
+  "description": "Infrastructure with opentofu using secrets manager",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/juanramirez9/infra-monorepo.git"
+  },
+  "keywords": [
+    "infrastructure",
+    "terraform",
+    "opentofu",
+    "aws",
+    "secrets-manager",
+    "iac"
+  ],
+  "author": "Juan Ramirez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/juanramirez9/infra-monorepo/issues"
+  },
+  "homepage": "https://github.com/juanramirez9/infra-monorepo#readme",
+  "scripts": {
+    "semantic-release": "semantic-release",
+    "format": "find . -name '*.tf' -exec terraform fmt {} \\;",
+    "validate": "find . -name '*.tf' -path '*/modules/*' -o -path '*/environments/*' -o -name 'main.tf' | xargs -I {} dirname {} | sort -u | xargs -I {} sh -c 'cd {} && terraform init -backend=false && terraform validate'",
+    "lint": "tflint --recursive",
+    "security": "trivy config ."
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^11.1.0",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^9.2.6",
+    "@semantic-release/npm": "^11.0.2",
+    "@semantic-release/release-notes-generator": "^12.1.0",
+    "conventional-changelog-conventionalcommits": "^7.0.2",
+    "semantic-release": "^22.0.12",
+    "semantic-release-monorepo": "^8.0.2"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
