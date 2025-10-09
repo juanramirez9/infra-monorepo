@@ -25,9 +25,14 @@ jobs:
         id: base
         run: |
           if [ "${{ github.event_name }}" = "pull_request" ]; then
-            echo "base=${{ github.event.pull_request.base.sha }}" >> $GITHUB_OUTPUT
+            echo "base=${{ github.event.pull_request.base.sha }}" >> "$GITHUB_OUTPUT"
           else
-            echo "base=${{ github.event.before }}" >> $GITHUB_OUTPUT
+            BEFORE_SHA="${{ github.event.before }}"
+            if [ "$BEFORE_SHA" = "0000000000000000000000000000000000000000" ] || [ -z "$BEFORE_SHA" ]; then
+              BEFORE_SHA=$(git rev-parse "${{ github.sha }}~1" 2>/dev/null || echo "")
+            fi
+            echo "base=$BEFORE_SHA" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Compute changed module folders
         id: set-matrix
