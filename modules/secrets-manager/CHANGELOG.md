@@ -1,3 +1,10 @@
+## [secrets-manager-v1.0.1](https://github.com/juanramirez9/infra-monorepo/compare/secrets-manager/v1.0.0...secrets-manager/v1.0.1) (2025-10-09)
+
+
+### 🐛 Bug Fixes
+
+* update environment variable description to include 'test' ([4be5560](https://github.com/juanramirez9/infra-monorepo/commit/4be55607e36c91377fa550914d2495c743a74b01))
+
 ## secrets-manager-v1.0.0 (2025-10-09)
 
 
