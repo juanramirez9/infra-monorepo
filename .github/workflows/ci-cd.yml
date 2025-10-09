@@ -1,4 +1,4 @@
-name: CI/CD Pipeline
+name: Release Pipeline
 
 on:
   push:
@@ -11,23 +11,60 @@ env:
 
 jobs:
 
+  detect-changes:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Determine base ref
+        id: base
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            echo "base=${{ github.event.pull_request.base.sha }}" >> $GITHUB_OUTPUT
+          else
+            echo "base=${{ github.event.before }}" >> $GITHUB_OUTPUT
+
+      - name: Compute changed module folders
+        id: set-matrix
+        run: |
+          BASE_SHA='${{ steps.base.outputs.base }}'
+          HEAD_SHA='${{ github.sha }}'
+          echo "Base: $BASE_SHA Head: $HEAD_SHA"
+          CHANGED_FILES=$(git diff --name-only "$BASE_SHA" "$HEAD_SHA")
+          TARGETS=("modules/s3-bucket" "modules/secrets-manager")
+          declare -a CHANGED_MODULES=()
+          for t in "${TARGETS[@]}"; do
+            if echo "$CHANGED_FILES" | grep -q "^$t/"; then
+              CHANGED_MODULES+=("$t")
+            fi
+          done
+          if [ ${#CHANGED_MODULES[@]} -eq 0 ]; then
+            echo "No target modules changed."
+            MATRIX='[]'
+          else
+            # Build JSON array
+            MATRIX=$(printf '%s\n' "${CHANGED_MODULES[@]}" | jq -R -s -c 'split("\n")[:-1]')
+          fi
+          echo "matrix=$MATRIX" >> $GITHUB_OUTPUT
+          echo "Matrix: $MATRIX"
+
   release:
     name: Semantic Release
+    needs: detect-changes
+    if: ${{ needs.detect-changes.outputs.matrix != '[]' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master') }}
     runs-on: ubuntu-latest
-    
     strategy:
+      fail-fast: false
       matrix:
-        folder:
-          - modules/s3-bucket
-          - modules/secrets-manager
-
-    
-    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
-    
+        folder: ${{ fromJSON(needs.detect-changes.outputs.matrix) }}
     outputs:
       new-release-published: ${{ steps.semantic.outputs.new-release-published }}
       new-release-version: ${{ steps.semantic.outputs.new-release-version }}
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
