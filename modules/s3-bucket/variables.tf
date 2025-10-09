@@ -14,7 +14,7 @@ variable "project_name" {
 }
 
 variable "enable_versioning" {
-  description = "Enable versioning for the S3 bucket this is for v3"
+  description = "Enable versioning for the S3 bucket"
   type        = bool
   default     = true
 }
