@@ -1,11 +1,11 @@
 {
-  "name": "infra-modules-monorepo",
+  "name": "infra-monorepo",
   "version": "0.0.0-development",
   "description": "Infrastructure monorepo using OpenTofu with S3 bucket and Secrets Manager modules",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/juanramirez9/infra-modules-monorepo.git"
+    "url": "https://github.com/juanramirez9/infra-monorepo.git"
   },
   "keywords": [
     "infrastructure",
@@ -19,9 +19,9 @@
   "author": "Juan Ramirez",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/juanramirez9/infra-modules-monorepo/issues"
+    "url": "https://github.com/juanramirez9/infra-monorepo/issues"
   },
-  "homepage": "https://github.com/juanramirez9/infra-modules-monorepo#readme",
+  "homepage": "https://github.com/juanramirez9/infra-monorepo#readme",
   "scripts": {
     "semantic-release": "semantic-release",
     "format": "find . -name '*.tf' -exec terraform fmt {} \\;",
