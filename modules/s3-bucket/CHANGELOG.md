@@ -1,3 +1,16 @@
+## [s3-bucket-v1.1.0](https://github.com/juanramirez9/infra-monorepo/compare/s3-bucket/v1.0.1...s3-bucket/v1.1.0) (2025-10-09)
+
+
+### 🚀 Features
+
+* firts commit ([5539669](https://github.com/juanramirez9/infra-monorepo/commit/55396695fac40dfe76627d0cbf295228c4524872))
+
+
+### 🐛 Bug Fixes
+
+* update description for enable_versioning variable in S3 bucket module ([04fbdce](https://github.com/juanramirez9/infra-monorepo/commit/04fbdce857a8a9b7ca1da7b8e19aec96e4c2bf82))
+* update repository references to match new monorepo structure ([621f9a5](https://github.com/juanramirez9/infra-monorepo/commit/621f9a589684f9e249909dbc0422f35a21b1cc65))
+
 ## [s3-bucket-v1.0.1](https://github.com/juanramirez9/infra-monorepo/compare/s3-bucket/v1.0.0...s3-bucket/v1.0.1) (2025-10-09)
 
 
