@@ -1,3 +1,10 @@
+## [s3-bucket-v1.0.1](https://github.com/juanramirez9/infra-monorepo/compare/s3-bucket/v1.0.0...s3-bucket/v1.0.1) (2025-10-09)
+
+
+### 🐛 Bug Fixes
+
+* **s3-bucket:** remove 'test' from environment variable description ([2cf9f31](https://github.com/juanramirez9/infra-monorepo/commit/2cf9f31d031c8c9ba01c631f26d832b7a5d185b0))
+
 ## s3-bucket-v1.0.0 (2025-10-09)
 
 
