@@ -12,8 +12,8 @@ Please be respectful and constructive in all interactions. We aim to create a we
 
 ```bash
 # Clone the repository
-git clone https://github.com/juanramirez9/infra-monorepo.git
-cd infra-monorepo
+git clone https://github.com/juanramirez9/infra-modules-monorepo.git
+cd infra-modules-monorepo
 
 # Install dependencies
 npm install

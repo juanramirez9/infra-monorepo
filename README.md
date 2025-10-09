@@ -5,7 +5,7 @@ This repository contains infrastructure as code using OpenTofu (Terraform) with 
 ## Repository Structure
 
 ```
-infra-monorepo/
+infra-modules-monorepo/
 ├── modules/                    # Reusable infrastructure modules
 │   ├── s3-bucket/             # S3 bucket module
 │   │   ├── main.tf
