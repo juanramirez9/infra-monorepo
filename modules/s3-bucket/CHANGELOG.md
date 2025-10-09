@@ -1,3 +1,14 @@
+## [s3-bucket-v2.0.0](https://github.com/juanramirez9/infra-monorepo/compare/s3-bucket/v1.1.0...s3-bucket/v2.0.0) (2025-10-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* update description for enable_versioning variable in S3 bucket module
+
+### 🚀 Features
+
+* update description for enable_versioning variable in S3 bucket module ([862df02](https://github.com/juanramirez9/infra-monorepo/commit/862df023aaa127836c6fa0cac5ac30739d1f9edc))
+
 ## [s3-bucket-v1.1.0](https://github.com/juanramirez9/infra-monorepo/compare/s3-bucket/v1.0.1...s3-bucket/v1.1.0) (2025-10-09)
 
 
