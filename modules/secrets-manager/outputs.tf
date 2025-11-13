@@ -9,7 +9,7 @@ output "secret_arn" {
 }
 
 output "secret_name" {
-  description = "The name of the secret"
+  description = "The name of the secret test"
   value       = aws_secretsmanager_secret.this.name
 }
 
