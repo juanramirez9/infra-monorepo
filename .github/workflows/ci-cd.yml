@@ -86,6 +86,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Set variable
+        run: echo "folder=test_folder" >> $GITHUB_ENV
+
       - name: Semantic Release ${{ matrix.folder }}
         id: semantic
         working-directory: ${{ matrix.folder }}
