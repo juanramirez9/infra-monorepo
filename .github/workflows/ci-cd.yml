@@ -92,4 +92,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           folder: "test_foler"
-        run: npm run semantic-release -e semantic-release-monorepo
+        run: npm run semantic-release -e semantic-release-monorepo -t "${{ env.folder }}/v${version}"
