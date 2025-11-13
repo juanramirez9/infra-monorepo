@@ -1,6 +1,6 @@
 {
   "extends": "semantic-release-monorepo",
-  "tagFormat": "secrets-manager/v${version}",
+  "tagFormat": "${{env.test_folder}}/v${version}",
   "branches": [
     "main",
     "master"
