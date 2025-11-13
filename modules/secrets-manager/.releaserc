@@ -1,6 +1,6 @@
 {
   "extends": "semantic-release-monorepo",
-  "tagFormat": "${folder}/v${version}",
+  "tagFormat": "${process.env.folder}/v${version}",
   "branches": [
     "main",
     "master"
