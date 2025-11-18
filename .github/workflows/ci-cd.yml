@@ -86,10 +86,17 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Set MODULE_NAME
+        id: set-module-name
+        run: |
+          MODULE_NAME="${{ matrix.folder }}"
+          MODULE_NAME="${MODULE_NAME#modules/}"
+          echo "MODULE_NAME=$MODULE_NAME" >> $GITHUB_OUTPUT
+
       - name: Semantic Release ${{ matrix.folder }}
         id: semantic
         working-directory: ${{ matrix.folder }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          folder: $( echo "$ ${{ matrix.folder }} #modules/}" )
+          GITHUB_TOKEN: ${{ env.GITHUB_TOKEN }}
+          folder: ${{ steps.set-module-name.outputs.MODULE_NAME }}
         run: npm run semantic-release -e semantic-release-monorepo
