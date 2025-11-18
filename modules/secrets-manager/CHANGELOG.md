@@ -1,3 +1,18 @@
+## [secrets-manager-v1.1.0](https://github.com/juanramirez9/infra-monorepo/compare/secrets-manager/v1.0.1...secrets-manager/v1.1.0) (2025-11-18)
+
+
+### 🚀 Features
+
+* Update .releaserc ([f1fa8e3](https://github.com/juanramirez9/infra-monorepo/commit/f1fa8e345068f9fba685397a4ec2415364e0ae30))
+* Update .releaserc ([fac1801](https://github.com/juanramirez9/infra-monorepo/commit/fac1801ac055a8c421fe6a092d2b6c139fc62e4f))
+* Update .releaserc ([8acaa86](https://github.com/juanramirez9/infra-monorepo/commit/8acaa861e61aa7655dc26b1fcd52e91fec784daa))
+* Update .releaserc ([5c6652e](https://github.com/juanramirez9/infra-monorepo/commit/5c6652ebca4a53f92eda6bba002038a9a5a0b8ef))
+* Update .releaserc ([7fe3880](https://github.com/juanramirez9/infra-monorepo/commit/7fe3880e3f8c0f137170090f98d66ea3ca74262c))
+* Update outputs.tf ([98566e6](https://github.com/juanramirez9/infra-monorepo/commit/98566e66d3a8fa44f01619aae246e3238ed05e2e))
+* Update outputs.tf ([e6e65b9](https://github.com/juanramirez9/infra-monorepo/commit/e6e65b9f68db3669e106a382cd636000afe7d5cb))
+* Update outputs.tf ([e388fff](https://github.com/juanramirez9/infra-monorepo/commit/e388fff79550bd8fc8ee9eb3a73418f18d8fbd56))
+* Update outputs.tf ([7ab6ac3](https://github.com/juanramirez9/infra-monorepo/commit/7ab6ac39a5b74fb0fe29c0d0fa39087201200523))
+
 ## secrets-manager-v1.0.0 (2025-11-13)
 
 
