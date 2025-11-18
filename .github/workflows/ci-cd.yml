@@ -97,6 +97,6 @@ jobs:
         id: semantic
         working-directory: ${{ matrix.folder }}
         env:
-          GITHUB_TOKEN: ${{ env.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           folder: ${{ steps.set-module-name.outputs.MODULE_NAME }}
         run: npm run semantic-release -e semantic-release-monorepo
